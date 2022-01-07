@@ -48,35 +48,41 @@ class Info extends React.Component {
                 <Navbar isDarkMode={isDarkMode} handleTheme={this.props.handleTheme} />
                 <div className="container">
                     <button className={btnStyle} onClick={() => handleInfo(false)}>
-                        <img src="left-arrow.svg" alt="left arrow" />
+                        <img src="./country-lookup/left-arrow.svg" alt="left arrow" />
                         <span>Back</span>
                     </button>
-                    <img src={flag} alt="flag" className={flagStyle} />
-                    <h1>{name}</h1>
-                    <ul>
-                        <li><span>Native Name: </span>{nativeName}</li>
-                        <li><span>Population: </span>{population.toLocaleString()}</li>
-                        <li><span>Region: </span>{region}</li>
-                        <li><span>Sub Region: </span>{subregion}</li>
-                        <li><span>Capital: </span>{capital}</li>
-                        <li><span>Top Level Domain: </span>{topLevelDomain}</li>
-                        <li><span>Currencies: </span>{curr}</li>
-                        <li><span>Languages: </span>{langs}</li>
-                    </ul>
-                    {
-                        borders !== undefined && (
-                            <>
-                                <h2>Border Countries:</h2>
-                                <div className='container-2'>
+                    <div className="flag-and-info">
+                        <img src={flag} alt="flag" className={flagStyle} />
+                        <div className="infos">     
+                            <h1>{name}</h1>
+                            <div className="first-info">
+                                <p><span>Native Name: </span>{nativeName}</p>
+                                <p><span>Population: </span>{population.toLocaleString()}</p>
+                                <p><span>Region: </span>{region}</p>
+                                <p><span>Sub Region: </span>{subregion}</p>
+                                <p><span>Capital: </span>{capital}</p>
+                            </div>
+                            <div className="second-info">
+                                <p><span>Top Level Domain: </span>{topLevelDomain}</p>
+                                <p><span>Currencies: </span>{curr}</p>
+                                <p><span>Languages: </span>{langs}</p>
+                            </div>
+                            <div className="third-info">
                                 {
-                                    this.props.countries.filter(country => {
-                                        return borders.includes(country.alpha3Code)
-                                    }).map((country, index) => <BorderCountry key={index} name={country.name} classStyle={borderStyle} />)
+                                    borders !== undefined && (
+                                        <div className='container-2'>
+                                            <h2>Border Countries:</h2>
+                                            {
+                                                this.props.countries.filter(country => {
+                                                    return borders.includes(country.alpha3Code)
+                                                }).map((country, index) => <BorderCountry key={index} name={country.name} classStyle={borderStyle} />)
+                                            }
+                                        </div>
+                                    )
                                 }
-                                </div>
-                            </>
-                        )
-                    }
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

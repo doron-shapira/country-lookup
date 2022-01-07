@@ -10,11 +10,11 @@ class Search extends React.Component {
         const isDarkMode = this.props.isDarkMode
 
         return (
-            <>
+            <div className="main-container">
                 <div id='search-bar' className={isDarkMode ? 'dark-search' : 'light-search'}>
                     <label htmlFor="search-input">
                         <img 
-                            src="search-sharp.svg"
+                            src="./country-lookup/search-sharp.svg"
                             alt="magnifying glass"
                             id="search-icon"
                             className={isDarkMode ? 'light-icon' : ''}
@@ -35,7 +35,7 @@ class Search extends React.Component {
                     searchedTerm={this.state.searchedTerm}
                     handleTheme={this.props.handleTheme}
                 />
-            </>
+            </div>
         )
     }
 }

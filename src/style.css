@@ -13,11 +13,15 @@ progress {
 
 /* Title */
 
-#navbar {
+.navbar-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 5rem;
+    font-weight: 900;
+    width: 90%;
+    margin: 0 auto;
+    font-size: clamp(15px, 2.5vw, 25px);
 }
 
 .dark-navbar {
@@ -31,17 +35,11 @@ progress {
     box-shadow: 0px 0px 20px hsla(206, 24%, 13%, 0.198);
 }
 
-header {
-    font-weight: 800;
-    margin-left: 20px;
-}
-
 #theme-btn {
     background-color: transparent;
-    margin-right: 10px;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    font-size: inherit;
 }
 
 .dark-theme-btn {
@@ -101,6 +99,10 @@ header {
 }
 
 /* Filter */
+
+.filter-container {
+    position: relative;
+}
 
 .filter-btn {
     display: flex;
@@ -322,20 +324,15 @@ header {
     box-shadow: 0px 0px 20px hsla(206, 24%, 13%, 0.198);
 }
 
-.info-modal ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.info-modal ul span {
+.info-modal p span {
     font-weight: 800;
 }
 
-.info-modal li {
+.info-modal p {
     margin-bottom: 10px;
 }
 
-.info-modal li:nth-child(5) {
+.info-modal p:nth-child(5) {
     margin-bottom: 40px;
 }
 
@@ -343,6 +340,12 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+h2 {
+    flex-basis: 100%;
+    margin: 0;
+    margin-top: 2rem;
 }
 
 .border-country {
@@ -355,4 +358,86 @@ header {
 .border-country-light {
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 0px 20px hsla(206, 24%, 13%, 0.198);
+}
+
+@media (min-width: 450px) {
+    .filter-btn, #search-bar {
+        width: 224.5px;
+        margin: 0;
+        margin-top: 3rem;
+    }
+
+    .regions {
+        width: 224.5px;
+        margin-left: 0;
+    }
+
+    #search-bar {
+        width: 450px;
+    }
+
+    .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .countries-container {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 4rem;
+        margin-top: 2rem;
+    }
+
+    .card {
+        margin: 0;
+        width: 300px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .flag-and-info {
+        display: flex;
+        align-items: flex-start;
+        gap: 5rem;
+        /* flex-wrap: wrap; */
+    }
+
+    .info-flag {
+        width: 30%;
+        max-width: 600px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .info-modal p:nth-child(5) {
+        margin-bottom: unset;
+    }
+
+    .infos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .first-info {
+        margin-right: 5rem;
+    }
+
+    h1, .third-info {
+        flex-basis: 100%;
+    }
+
+    .container-2 {
+        align-items: flex-end;
+    }
+
+    h2 {
+        flex-basis: unset;
+    }
 }

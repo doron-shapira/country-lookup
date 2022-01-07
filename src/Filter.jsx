@@ -36,30 +36,34 @@ class Filter extends React.Component {
 
         return (
             <>
-                <button className={style} onClick={this.handleFilter}>
-                    <span id="filter-span">Filter by Region</span>
-                    <img src="down-arrow.svg" alt="down-arrow" id="arrow-icon" className={isDarkMode ? 'dark-arrow' : ''} />
-                </button>
-                <div className={regions}>
-                    <ul>
-                        <li className={africa} onClick={this.handleAfrica}>Africa</li>
-                        <li className={america} onClick={this.handleAmericas}>Americas</li>
-                        <li className={asia} onClick={this.handleAsia}>Asia</li>
-                        <li className={europe} onClick={this.handleEurope}>Europe</li>
-                        <li className={oceania} onClick={this.handleOceania}>Oceania</li>
-                    </ul>
+                <div className="filter-container">
+                    <button className={style} onClick={this.handleFilter}>
+                        <span id="filter-span">Filter by Region</span>
+                        <img src="./country-lookup/down-arrow.svg" alt="down-arrow" id="arrow-icon" className={isDarkMode ? 'dark-arrow' : ''} />
+                    </button>
+                    <div className={regions}>
+                        <ul>
+                            <li className={africa} onClick={this.handleAfrica}>Africa</li>
+                            <li className={america} onClick={this.handleAmericas}>Americas</li>
+                            <li className={asia} onClick={this.handleAsia}>Asia</li>
+                            <li className={europe} onClick={this.handleEurope}>Europe</li>
+                            <li className={oceania} onClick={this.handleOceania}>Oceania</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <Countries
-                    isDarkMode={isDarkMode}
-                    searchedTerm={this.props.searchedTerm}
-                    handleTheme={this.props.handleTheme}
-                    isAfrica={this.state.isAfrica}
-                    isAmericas={this.state.isAmericas}
-                    isAsia={this.state.isAsia}
-                    isEurope={this.state.isEurope}
-                    isOceania={this.state.isOceania}
-                />
+                <div className="countries-container">
+                    <Countries
+                        isDarkMode={isDarkMode}
+                        searchedTerm={this.props.searchedTerm}
+                        handleTheme={this.props.handleTheme}
+                        isAfrica={this.state.isAfrica}
+                        isAmericas={this.state.isAmericas}
+                        isAsia={this.state.isAsia}
+                        isEurope={this.state.isEurope}
+                        isOceania={this.state.isOceania}
+                    />
+                </div>
             </>
         )
     }

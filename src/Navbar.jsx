@@ -6,15 +6,17 @@ class Navbar extends React.Component {
         const handleTheme = this.props.handleTheme
 
         return (
-            <div id='navbar' className={isDarkMode ? 'dark-navbar' : 'light-navbar'}>
-                <header>Where in the world?</header>
-                <button 
-                    onClick={handleTheme} 
-                    id='theme-btn'
-                    className={isDarkMode ? 'dark-theme-btn' : 'light-theme-btn'}
-                >
-                    {isDarkMode ? '🌞 Light Mode' : '🌚 Dark Mode'}
-                </button>
+            <div className={isDarkMode ? 'dark-navbar' : 'light-navbar'}>
+                <div className="navbar-content">
+                    <header>Where in the world?</header>
+                    <button 
+                        onClick={handleTheme} 
+                        id='theme-btn'
+                        className={isDarkMode ? 'dark-theme-btn' : 'light-theme-btn'}
+                    >
+                        {isDarkMode ? '🌞 Light Mode' : '🌚 Dark Mode'}
+                    </button>
+                </div>
             </div>
         )
     }
