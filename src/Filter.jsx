@@ -39,7 +39,7 @@ class Filter extends React.Component {
                 <div className="filter-container">
                     <button className={style} onClick={this.handleFilter}>
                         <span id="filter-span">Filter by Region</span>
-                        <img src="./country-lookup/down-arrow.svg" alt="down-arrow" id="arrow-icon" className={isDarkMode ? 'dark-arrow' : ''} />
+                        <img src="down-arrow.svg" alt="down-arrow" id="arrow-icon" className={isDarkMode ? 'dark-arrow' : ''} />
                     </button>
                     <div className={regions}>
                         <ul>
