@@ -48,7 +48,7 @@ class Info extends React.Component {
                 <Navbar isDarkMode={isDarkMode} handleTheme={this.props.handleTheme} />
                 <div className="container">
                     <button className={btnStyle} onClick={() => handleInfo(false)}>
-                        <img src="./country-lookup/left-arrow.svg" alt="left arrow" />
+                        <img src="left-arrow.svg" alt="left arrow" />
                         <span>Back</span>
                     </button>
                     <div className="flag-and-info">
