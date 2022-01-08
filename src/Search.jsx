@@ -14,7 +14,7 @@ class Search extends React.Component {
                 <div id='search-bar' className={isDarkMode ? 'dark-search' : 'light-search'}>
                     <label htmlFor="search-input">
                         <img 
-                            src="./country-lookup/search-sharp.svg"
+                            src="search-sharp.svg"
                             alt="magnifying glass"
                             id="search-icon"
                             className={isDarkMode ? 'light-icon' : ''}
